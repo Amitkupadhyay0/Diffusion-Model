@@ -1,0 +1,2 @@
+ariational Autoencoder (VAE) is a generative model that learns a latent representation of data.
+It uses a probabilistic approach to encode and decode data, ensuring a continuous latent space.
