@@ -198,9 +198,12 @@ In this proccese each step introduces a controlled amount of noise through a Mar
 <p align="center">
   <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diffusion_model_ex_1.png" alt="Generative Model Example">
 </p>
-During the forward diffusion process, small Gaussian noise is incrementally added to the data distribution over \( T \) steps, resulting in a series of increasingly noisy samples. The noise added at each step is regulated by a variance schedule \(\beta_1, \ldots, \beta_T\). 
+During the forward diffusion process, small Gaussian noise is incrementally added to the data distribution over \( T \) steps, resulting in a series of increasingly noisy samples. The noise added at each step is regulated by a variance schedule β1,...,βT.
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diff_model_equation_forward.png" alt="Generative Model Example" width="600">
+</p>
 
-If the variance schedule is well-designed, the final noisy sample \( x_T \) will approximate an isotropic Gaussian distribution for sufficiently large \( T \). This ensures that the added noise effectively transforms the original data into a more random form, paving the way for the reconstruction phase.
+**Step 2 : Removing Random Noise**
 
 
 
