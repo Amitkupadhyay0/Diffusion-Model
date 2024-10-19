@@ -163,3 +163,24 @@ Can be find [here](link_to_your_notebook).
 
 <p style="text-align: center;">Let's talk about the diffusion model. It is inspired by the physical diffusion process.</p>
 
+### Example: Diffusion of Sugar in Water
+
+The physical diffusion process can be illustrated with the example of sugar in water. 
+
+When sugar is added to water, the sugar molecules initially concentrate at the bottom. Over time, these molecules move randomly, spreading throughout the water. This movement continues until the sugar is evenly distributed, demonstrating diffusion as particles transition from an area of high concentration (the sugar at the bottom) to an area of low concentration (the surrounding water). 
+
+This process occurs naturally and illustrates how substances mix and achieve equilibrium.
+
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diffusion_proceese_water.jpg" alt="Generative Model Example">
+</p>
+##### Relating the Diffusion Process to Diffusion Models
+
+The diffusion process in physics serves as an inspiration for diffusion models used in machine learning and generative tasks. Just as sugar molecules move from areas of high concentration to low concentration in water, diffusion models iteratively transform data distributions.
+
+In diffusion models, the training data is gradually perturbed (or 'noised') through a process similar to diffusion, where information spreads out over time. The model learns to reverse this process, effectively generating new data samples that resemble the original training data. This relationship highlights how concepts from physics can inform and enhance techniques in generative modeling, allowing for the creation of diverse and meaningful outputs from learned distributions.
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diffusion_process_1.png" alt="Generative Model Example">
+</p>
+
+
