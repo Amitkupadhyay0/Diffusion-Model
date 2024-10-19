@@ -34,4 +34,102 @@ Just as baking cookies from a consistent recipe generates new yet similar treats
 </p>
 
 ---
+## Task Overview
 
+Our task is to take a given set of images and learn the statistical distribution of those images. By understanding this distribution, we can generate new images that maintain the characteristics of the original dataset, enabling the creation of unique yet coherent outputs.
+
+---
+Now, let’s try to understand an earlier generative model named:
+Now, let’s try to understand an earlier generative model named:
+
+<p align="center">
+  <strong>Variational Autoencoder</strong>
+</p>
+
+Imagine Variational Autoencoders (VAEs) as a talented Indian chef. This chef learns to prepare a variety of traditional dishes, like biryani, dosa, and paneer tikka, by understanding their unique ingredients and cooking techniques. 
+
+Once the chef has mastered these dishes, they can create new recipes that blend flavors from different cuisines, like a fusion biryani that incorporates Italian herbs or a dosa with a Mexican twist. 
+
+In the same way, VAEs analyze many images to understand their key features and patterns, allowing them to generate new images that are inspired by the originals but are completely unique. 
+
+It consists of two parts: **Encoder** and **Decoder**.
+
+### Encoder
+The **Encoder** transforms the input image into a lower-dimensional space, which is like summarizing the image's essential features. Instead of representing every detail, it captures the main characteristics that define the image. This compressed representation is known as the latent space.
+
+### Decoder
+Next, the **Decoder** takes this lower-dimensional representation and reconstructs it back into an image. It’s like taking the summary and expanding it back into a full recipe. The Decoder uses the learned features to create a new image that resembles the original, while also allowing for variations, making each generated image unique.
+
+Together, the Encoder and Decoder work to help the VAE learn how to generate new images based on the patterns it has learned from the training data.
+
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/auto_encoder_image_1.png" alt="Auto encoder Model ">
+</p>
+So, the question arises: where are we learning the distribution? 
+
+The answer is in the **Encoder** stage. In this phase, we try to learn the underlying distribution of the input images. Instead of just compressing the image into a fixed point in latent space, the Encoder generates a range of possible representations by estimating the parameters of a distribution—typically a Gaussian distribution.
+
+This means that for each input image, the Encoder outputs two key components: the **mean** and **variance**. The mean represents the central point of the distribution, while the variance indicates how spread out the data points are around that mean. By sampling from this distribution, we can capture the inherent variability of the images, allowing the VAE to generate diverse new images that still share characteristics with the original dataset.
+
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/auto_encoder_2.png" alt="Auto encoder Model ">
+</p>
+The architecture of the Encoder in a Variational Autoencoder (VAE) plays a crucial role in learning the underlying distribution of the input images. Instead of encoding each input image into a single point, this approach encodes it into a distribution, specifically a Gaussian distribution. This adds a layer of variability and uncertainty, which is essential for generating diverse outputs.
+
+### Encoder Architecture
+
+1. **Input Layer**: 
+   - The Encoder starts with an input layer that receives the original image. The images are typically flattened into a one-dimensional vector for processing.
+
+2. **Convolutional Layers**: 
+   - The input image is passed through several convolutional layers, which apply filters to extract important features from the image. Each convolutional layer reduces the spatial dimensions while increasing the depth of the feature maps.
+
+3. **Activation Functions**: 
+   - After each convolutional layer, activation functions (like ReLU) are applied to introduce non-linearity, allowing the model to learn complex patterns.
+
+4. **Flattening**: 
+   - After the final convolutional layer, the output is flattened into a one-dimensional vector to prepare it for the next layers.
+
+5. **Fully Connected Layers**: 
+   - The flattened output is then fed into one or more fully connected (dense) layers, which further process the learned features.
+
+6. **Output Layers**:
+   - The final output consists of two separate layers:
+     - **Mean Layer**: This layer predicts the mean of the Gaussian distribution for the encoded representation of the input image.
+     - **Variance Layer**: This layer predicts the variance, indicating the spread of the distribution.
+
+### Learning Distribution
+
+By encoding each input into a distribution rather than a single point, the Encoder captures the variability of the input data. This means that when we sample from the learned distribution during the decoding phase, we can generate new images that share characteristics with the original dataset while introducing diversity. This process allows the VAE to create unique outputs based on the patterns it has learned.
+
+Now, once the image distribution is learned, we move on to the **Decoder** part of the Variational Autoencoder (VAE).
+
+### Decoder Architecture
+
+1. **Input Layer**:
+   - The Decoder starts with the sampled latent variables obtained from the Encoder. These variables represent points sampled from the learned distribution.
+
+2. **Fully Connected Layers**:
+   - The latent variables are passed through one or more fully connected (dense) layers. These layers help reconstruct the high-dimensional representation of the original image from the lower-dimensional latent space.
+
+3. **Activation Functions**:
+   - Non-linear activation functions (such as ReLU) are applied to the outputs of the fully connected layers to allow the model to learn complex relationships in the data.
+
+4. **Upsampling Layers**:
+   - After the fully connected layers, the output is reshaped into a format suitable for convolutional processing. This often involves upsampling layers, which gradually increase the spatial dimensions of the representation back to the original image size.
+
+5. **Convolutional Layers**:
+   - The Decoder then applies several transposed convolutional layers (also known as deconvolutional layers) to reconstruct the image. These layers reverse the operations of the convolutional layers in the Encoder, generating an image from the learned features.
+
+6. **Output Layer**:
+   - The final layer produces the reconstructed image. This layer typically uses a sigmoid activation function to ensure that the pixel values are scaled between 0 and 1, matching the input image format.
+
+### Image Generation
+
+The Decoder plays a crucial role in generating new images. By sampling from the latent space, it can produce images that not only resemble the training data but also exhibit variability and uniqueness. This process allows the VAE to create diverse outputs, enabling applications in various fields such as art, fashion design, and more.
+
+In summary, the Decoder takes the learned latent representations and reconstructs them into new images, making it an essential component of the Variational Autoencoder.
+
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/auto_encoder_final.png" alt="Auto encoder Model ">
+</p>
