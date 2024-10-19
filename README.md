@@ -156,3 +156,10 @@ The loss calculation in a VAE ensures that the model learns to accurately recons
 
 I have attached a notebook that demonstrates how to build a Variational Autoencoder (VAE) from scratch using TensorFlow. 
 Can be find [here](link_to_your_notebook).
+
+<hr style="border: 3px solid red;"/>
+
+<h2 style="text-align: center; color: darkgreen;">Diffusion Model</h2>
+
+<p style="text-align: center;">Let's talk about the diffusion model. It is inspired by the physical diffusion process.</p>
+
