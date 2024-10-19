@@ -145,9 +145,14 @@ Reconstruction Loss = -E[q(z|x)][log p(x|z)]
 
 2. **KL Divergence Loss**: This quantifies the difference between the learned latent distribution and a prior distribution, typically a standard normal distribution:
 
-
 3. **Total Loss**: The overall loss function is the sum of both components:
 
 ### Summary
 
 The loss calculation in a VAE ensures that the model learns to accurately reconstruct images while maintaining a well-structured latent space. This balance allows VAEs to generate diverse and meaningful new images that represent the training data.
+
+
+### Practical Implementation
+
+I have attached a notebook that demonstrates how to build a Variational Autoencoder (VAE) from scratch using TensorFlow. 
+Can be find [here](link_to_your_notebook).
