@@ -1,3 +1,9 @@
+<p align="center">
+  <strong style="color: red; font-size: 24px;">Diffusion Model</strong>
+</p>
+
+<p align="center" style="color: green;">----------------------------------------------------</p>
+
 **Classification Models vs Generative Models**
 
 ---
