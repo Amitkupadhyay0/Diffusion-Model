@@ -11,7 +11,7 @@ Suppose you want to build a model that can label an image—like predicting "Cat
 But what if, instead of just labeling an image, you wanted your model to generate entirely new images—images that have never been seen before, but are learned from existing data? That’s where generative models come into play.
 
 <p align="center">
-  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/cat_gen_model.png" alt="Generative Model Example">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/cat_gen_model.png" alt="Generative Model Example" width="600" height="200">
 </p>
 
 ---
