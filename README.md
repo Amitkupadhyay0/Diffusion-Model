@@ -133,3 +133,37 @@ In summary, the Decoder takes the learned latent representations and reconstruct
 <p align="center">
   <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/auto_encoder_final.png" alt="Auto encoder Model ">
 </p>
+
+Now, the question arises: how do we calculate the loss in a Variational Autoencoder (VAE)?
+
+### Loss Calculation in VAE
+
+The loss function for a VAE is comprised of two main components: the **reconstruction loss** and the **Kullback-Leibler (KL) divergence loss**. The overall loss function aims to balance these two aspects.
+
+1. **Reconstruction Loss**:
+   - The reconstruction loss measures how well the Decoder is able to recreate the original input images from the latent space. This loss is typically calculated using metrics like Mean Squared Error (MSE) or Binary Cross-Entropy, depending on the type of data.
+   - **Formula**:
+     \[
+     \text{Reconstruction Loss} = -\mathbb{E}_{q(z|x)}[\log p(x|z)]
+     \]
+   - Here, \(p(x|z)\) represents the probability of the input image given the latent representation, and \(q(z|x)\) is the learned distribution of the latent variables.
+
+2. **KL Divergence Loss**:
+   - The KL divergence loss quantifies the difference between the learned latent distribution (from the Encoder) and a prior distribution, usually a standard normal distribution (mean = 0, variance = 1). This component encourages the latent space to follow a known distribution, promoting regularization and preventing overfitting.
+   - **Formula**:
+     \[
+     \text{KL Divergence} = D_{KL}(q(z|x) \| p(z)) = -\frac{1}{2} \sum_{j=1}^{J} (1 + \log(\sigma_j^2) - \mu_j^2 - \sigma_j^2)
+     \]
+   - In this equation, \(\mu_j\) and \(\sigma_j^2\) are the mean and variance obtained from the Encoder for each latent variable \(z_j\), and \(p(z)\) is the prior distribution (typically a standard normal distribution).
+
+3. **Total Loss**:
+   - The total loss function for a VAE is the sum of the reconstruction loss and the KL divergence loss:
+   \[
+   \text{Total Loss} = \text{Reconstruction Loss} + \lambda \cdot \text{KL Divergence}
+   \]
+   - Here, \(\lambda\) is a weighting factor that can be adjusted to emphasize the importance of the KL divergence relative to the reconstruction loss.
+
+### Summary
+
+The loss calculation in a VAE ensures that the model not only learns to accurately reconstruct images but also maintains a well-structured latent space. By balancing these two components, VAEs can generate diverse and meaningful new images that are representative of the training data.
+
