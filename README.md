@@ -174,7 +174,7 @@ This process occurs naturally and illustrates how substances mix and achieve equ
 <p align="center">
   <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diffusion_proceese_water.jpg" alt="Generative Model Example">
 </p>
-##### Relating the Diffusion Process to Diffusion Models
+### Relating the Diffusion Process to Diffusion Models
 
 The diffusion process in physics serves as an inspiration for diffusion models used in machine learning and generative tasks. Just as sugar molecules move from areas of high concentration to low concentration in water, diffusion models iteratively transform data distributions.
 
@@ -182,5 +182,25 @@ In diffusion models, the training data is gradually perturbed (or 'noised') thro
 <p align="center">
   <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diffusion_process_1.png" alt="Generative Model Example">
 </p>
+
+### Simplified Understanding of Diffusion Models
+
+In diffusion models, we have two primary tasks:
+
+1. **Adding Random Noise**: We start with an image and gradually add random noise at each time step. This process continues until the image becomes completely random and indistinguishable from noise.
+
+2. **Reconstructing the Image**: Once we have a fully noisy image, our next task is to reconstruct the original image. We do this by gradually removing the noise, step by step, until we recover a clear image that resembles the one we started with.
+
+These two tasks—adding noise and then removing it—are fundamental to how diffusion models learn and generate new images.
+
+**Step 1 : Adding Random Noise**
+In this proccese each step introduces a controlled amount of noise through a Markov chain.
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diffusion_model_ex_1.png" alt="Generative Model Example">
+</p>
+During the forward diffusion process, small Gaussian noise is incrementally added to the data distribution over \( T \) steps, resulting in a series of increasingly noisy samples. The noise added at each step is regulated by a variance schedule \(\beta_1, \ldots, \beta_T\). 
+
+If the variance schedule is well-designed, the final noisy sample \( x_T \) will approximate an isotropic Gaussian distribution for sufficiently large \( T \). This ensures that the added noise effectively transforms the original data into a more random form, paving the way for the reconstruction phase.
+
 
 
