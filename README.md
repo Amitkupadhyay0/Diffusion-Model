@@ -205,5 +205,18 @@ During the forward diffusion process, small Gaussian noise is incrementally adde
 
 **Step 2 : Removing Random Noise**
 
+### Step 2: Removing Noise
 
+After adding noise to the image, the next step is to reconstruct the original image by gradually removing the noise. This reverse diffusion process consists of the following steps:
+
+1. **Iterative Denoising**: Starting with the noisy image, the model works to refine it by removing noise step by step. At each step, the model predicts a less noisy version of the image based on the current noisy sample.
+
+2. **Using Learned Parameters**: The model leverages what it has learned about the original data to estimate the distribution from the noisy samples. It essentially learns how to reverse the process of noise addition.
+
+3. **Gradual Reconstruction**: This denoising continues for several steps, progressively refining the image. By the end of this process, the model aims to generate a clear image that resembles the original input.
+
+The effectiveness of this step relies on the model's ability to accurately reverse the noise addition process, allowing it to produce high-quality images that reflect the characteristics of the training data.
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diffusion_model_ex_2.png" alt="Generative Model Example">
+</p>
 
