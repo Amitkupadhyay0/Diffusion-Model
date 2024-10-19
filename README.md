@@ -28,3 +28,10 @@ What if you wanted to make a new cookie? As long as you follow the same recipe, 
 In statistical terms, **sampling** from this recipe (or distribution) lets you generate new cookies with similar characteristics. Generative models work similarly: they learn the “recipe” or distribution of the data, and by sampling from it, they create new things that share the same characteristics as the original.
 
 Just as baking cookies from a consistent recipe generates new yet similar treats, generative models create new images by learning the underlying distribution of existing images. By sampling from this distribution, they produce unique images that share common characteristics.
+
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/Diff_model_intro.png" alt="Generative Model Example">
+</p>
+
+---
+
