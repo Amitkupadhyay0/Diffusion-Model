@@ -304,6 +304,9 @@ Open-AI in 2021 , presented there model for this proccese call CLIP model
 - CLIP is Contrastive Model, which triedto match Image with Text in Latent representation space.
 
 
+stay tune for more update on this post !!!
+
+
 
 
 
