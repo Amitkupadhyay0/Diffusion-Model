@@ -161,7 +161,7 @@ The loss calculation in a VAE ensures that the model learns to accurately recons
 ### Practical Implementation
 
 I have attached a notebook that demonstrates how to build a Variational Autoencoder (VAE) from scratch using TensorFlow. 
-Can be find [here](link_to_your_notebook).
+Can be find [here](https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/Variational_Autoencoder/Variational_Autoencoder%20.ipynb).
 
 <hr style="border: 3px solid red;"/>
 
@@ -258,3 +258,18 @@ This model consists of three main components:
    - The loss is calculated as the mean squared error (MSE) between the predicted clean image and the original image at each timestep.
    - This encourages the model to accurately denoise the image at every stage of the reverse diffusion process.
    - The U-Net architecture is employed to leverage its encoder-decoder structure for effective spatial information capture and reconstruction.
+
+Basic model code for understanding is attached here: [Model Code](https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/Basic_Diffusion_model/Basic_Diffusion_model.ipynb)
+
+
+---
+
+---
+<h1 style="color: red; text-align: center;">What is missing from our Diffusion Model?</h1>
+
+<p style="color: green; text-align: center; font-size: 20px;">This section discusses the limitations and areas for improvement in our diffusion model.</p>
+
+<h1 style="text-align: center; font-size: 36px; font-weight: bold;">Text to Image Model</h1>
+
+
+
