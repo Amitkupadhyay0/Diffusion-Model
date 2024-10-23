@@ -270,6 +270,7 @@ Basic model code for understanding is attached here: [Model Code](https://github
 ## Overview of Text Conditioning in the Text to Image Model
 
 This technique called **Text Conditioning**, which allows us to generate images based on textual input.
+## PART 1 : Training model
 
 1. **Embed Text into Latent Space**:  
    - Transform the text input into a latent representation, capturing its semantic meaning.
@@ -277,13 +278,33 @@ This technique called **Text Conditioning**, which allows us to generate images 
 2. **Embed Image into Latent Space**:  
    - Convert the image into a latent representation, preserving its visual features.
 
-3. **Align Image and Text in Latent Space**:  
-   - Organize the latent spaces of both image and text such that similar images and texts with related meanings are positioned close to each other. This ensures that the model can effectively correlate textual descriptions with visual representations.
+3. **Align Image and Text in Latent Space**:
+   - The vectors for both text and images are mapped into a shared latent space , such that similar images and texts with related meanings are positioned close to each other. This ensures that the model can effectively correlate textual descriptions with visual representations.
+During training, the model learns to optimize this alignment by adjusting the embeddings based on the relationships observed in the training data (image-text pairs).
+
+**Loss function (like contrastive loss)** is often used to measure how well the text and image vectors align in the latent space. The goal is to minimize the distance between corresponding text and image pairs while maximizing the distance from non-corresponding pairs.
+
+## PART 2: Image Generation
+**Conditional Sampling**: Once the text and image vectors are aligned, the model can generate new images conditioned on specific text vectors.
+The process typically involves:
+- Input Text will be given to generate an image ,which will be converted into embeeding using text encoder model.
+- The generation process begins with a completely random noise image. This noise serves as the starting point for the image that will be refined
+- At each time step of the diffusion process, the model uses both the current noisy image and the text embedding ,Basicaly, the model asks: "How should I modify this noisy image based on what the text says?"
 
 For example see below :
 <p align="center">
-  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/Text_image_3.png" alt="Generative Model Example" width="800">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/Text_image_3.png" alt="Generative Model Example" width="650">
 </p>
+
+
+Open-AI in 2021 , presented there model for this proccese call CLIP model
+## CLIP -  Contrastive Language-Image Pre-training
+- It is based on paper : https://arxiv.org/abs/2111.02114
+- This model was trained on LIAON 400 million data set of image Text pair.
+- CLIP is Contrastive Model, which triedto match Image with Text in Latent representation space.
+
+
+
 
 
 
