@@ -265,9 +265,9 @@ Basic model code for understanding is attached here: [Model Code](https://github
 ---
 
 ---
-<h1 style="color: red; text-align: center;">What is missing from our Diffusion Model?</h1>
+# 🚫 What is missing from our Diffusion Model? 🚫
 
-<p style="color: green; text-align: center; font-size: 20px;">This section discusses the limitations and areas for improvement in our diffusion model.</p>
+<p style="color: green; text-align: center; font-size: 20px;">Text</p>
 
 <h1 style="text-align: center; font-size: 36px; font-weight: bold;">Text to Image Model</h1>
 
