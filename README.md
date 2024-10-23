@@ -240,26 +240,21 @@ So , now question is how losse is measured ?
 So basically what we are trying to do is :
 
 <p align="center">
-  <img src="[https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diff_model_equation_forward.png](https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diif_model_11.png)" alt="Generative Model Example" width="600">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/diif_model_11.png" alt="Generative Model Example" width="600">
 </p>
 Start with an image and introduce random noise at each time step, resulting in a completely noisy image. Then, apply a model to denoise the image step by step, gradually removing the noise until the original image is restored.
 This model consists of three main components:
 
-Forward Diffusion Process:
-In the forward process, the goal is to add noise to the image progressively, aiming to transform it into a perfect Gaussian noise image with a mean (
-𝜇
-μ) of 0 and a standard deviation (
-𝜎
-σ) of 1.
+1. **Forward Diffusion Process**:  
+   - The goal is to progressively add noise to the image.
+   - Aim to transform the image into a perfect Gaussian noise image with a mean (\( \mu \)) of 0 and a standard deviation (\( \sigma \)) of 1.
 
-Reverse Diffusion Process:
-In the reverse process, the objective is to estimate the noise at a given timestep 
-𝑡
-t based on the noisy image, thereby producing a less noisy image at timestep 
-𝑡
-−
-1
-t−1. This process effectively removes noise from the image, working in the opposite direction of the forward process.
+2. **Reverse Diffusion Process**:  
+   - Estimate the noise at a given timestep \( t \) based on the noisy image.
+   - Produce a less noisy image at timestep \( t-1 \).
+   - This process effectively removes noise from the image, operating in the opposite direction of the forward process.
 
-Loss Measurement:
-The loss is calculated as the mean squared error (MSE) between the predicted clean image and the original image at each timestep. This encourages the model to accurately denoise the image at every stage of the reverse diffusion process. The U-Net architecture facilitates this by leveraging its encoder-decoder structure to capture and reconstruct spatial information effectively.
+3. **Loss Measurement**:  
+   - The loss is calculated as the mean squared error (MSE) between the predicted clean image and the original image at each timestep.
+   - This encourages the model to accurately denoise the image at every stage of the reverse diffusion process.
+   - The U-Net architecture is employed to leverage its encoder-decoder structure for effective spatial information capture and reconstruction.
