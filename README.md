@@ -265,11 +265,26 @@ Basic model code for understanding is attached here: [Model Code](https://github
 ---
 
 ---
-# 🚫 What is missing from our Diffusion Model? 🚫
+# 🚫 What is missing from our Diffusion Model? 🚫 -->  🔍 Text 
 
-<p style="color: green; text-align: center; font-size: 20px;">Text</p>
+## Overview of Text Conditioning in the Text to Image Model
 
-<h1 style="text-align: center; font-size: 36px; font-weight: bold;">Text to Image Model</h1>
+This technique called **Text Conditioning**, which allows us to generate images based on textual input.
+
+1. **Embed Text into Latent Space**:  
+   - Transform the text input into a latent representation, capturing its semantic meaning.
+
+2. **Embed Image into Latent Space**:  
+   - Convert the image into a latent representation, preserving its visual features.
+
+3. **Align Image and Text in Latent Space**:  
+   - Organize the latent spaces of both image and text such that similar images and texts with related meanings are positioned close to each other. This ensures that the model can effectively correlate textual descriptions with visual representations.
+
+For example see below :
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/Text_image_3.png" alt="Generative Model Example" width="800">
+</p>
+
 
 
 
