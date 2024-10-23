@@ -303,7 +303,9 @@ Open-AI in 2021 , presented there model for this proccese call CLIP model
 - This model was trained on LIAON 400 million data set of image Text pair.
 - CLIP is Contrastive Model, which triedto match Image with Text in Latent representation space.
 
-
+<p align="center">
+  <img src="https://github.com/Amitkupadhyay0/Diffusion-Model/blob/main/IMAGES/Text_image_2.png" alt="Generative Model Example" width="650">
+</p>
 stay tune for more update on this post !!!
 
 
